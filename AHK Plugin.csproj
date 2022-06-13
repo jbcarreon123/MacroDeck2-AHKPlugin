@@ -13,12 +13,10 @@
     <Reference Include="Macro Deck 2">
       <HintPath>C:\Program Files\Macro Deck\Macro Deck 2.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Users\jbcarreon123\AppData\Roaming\Macro Deck\plugins\SuchByte.WindowsUtils\Newtonsoft.Json.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
 	<PackageReference Include="Config" Version="1.0.0" />
   </ItemGroup>
