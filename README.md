@@ -33,3 +33,5 @@ AHK Plugin uses this wonderful 3rd-party libraries:
 - [Macro Deck 2 [by SuchByte]](https://macrodeck.org/) (Apache License 2.0)   
 - [Newtonsoft.Json](https://www.newtonsoft.com/json) (MIT License)
 - [AutoHotkey](https://autohotkey.com) (GPL-2.0 License)
+
+Icon is a merge of Macro Deck 2 and the autohotkey.com favicon.
