@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using jbcarreon123.AHKPlugin.Languages;
+using SuchByte.MacroDeck.Logging;
+using Newtonsoft.Json.Linq;
 
 namespace jbcarreon123.AHKPlugin.Actions
 {
@@ -22,6 +24,21 @@ namespace jbcarreon123.AHKPlugin.Actions
 
         public override void Trigger(string clientId, ActionButton actionButton)
         {
+            JObject configurationObject = JObject.Parse(this.Configuration);
+            var script = configurationObject["ahkScriptPath"].ToString();
+            var pth = PluginConfigHelper.GetPath("v2");
+
+            try
+            {
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.StartInfo.FileName = pth + "\\AutoHotkey.exe";
+                proc.StartInfo.Arguments = "\"" + script + "\"";
+                proc.Start();
+            }
+            catch (Exception e)
+            {
+                MacroDeckLogger.Error(PluginInstance.Main, $"{e}");
+            }
         }
 
         public override ActionConfigControl GetActionConfigControl(ActionConfigurator actionConfigurator)
