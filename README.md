@@ -8,7 +8,7 @@ Macro Deck 2 Community Plugin: does NOT work in Macro Deck Server or a standalon
 Choose your existing AHK script file and leave it! It will now work!
 
 ## Write and Run AutoHotkey scripts
-or, Write a new AHK script and leave it! AHK Plugin will save it automatically!
+or, Write a new AHK script and leave it! AHK Plugin will run it if you pressed the action button!
 
 ## Automation
 Use AHK Plugin with other plugins for automated tasks in Macro Deck!
