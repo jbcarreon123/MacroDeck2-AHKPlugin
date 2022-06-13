@@ -1,0 +1,9 @@
+{
+  "type": "Plugin",
+  "name": "AutoHotkey Plugin",
+  "author": "jbcarreon123",
+  "packageId": "jbcarreon123.AHKPlugin",
+  "version": "1.0.0",
+  "target-plugin-api-version": 32,
+  "dll": "AutoHotkey Plugin.dll"
+  }
