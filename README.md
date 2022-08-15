@@ -15,11 +15,11 @@ Use AHK Plugin with other plugins for automated tasks in Macro Deck!
 
 ## Features
 AHK Plugin has these actions:   
-| **Action**                   | **Description**            | **Status**   |
-|------------------------------|----------------------------|--------------|
-| **Run AHK Script**           | Run a AutoHotkey script    | Live         |
-| **Write and Run AHK Script** | Write and run a AHK Script | Live         |
-| **Window Spy**               | AHK's built-in Window Spy  | Live         |
+| **Action** | **Description** | **Status** |
+| --- | --- | --- |
+| **Run AHK Script** | Run a AutoHotkey script | Live |
+| **Write and Run AHK Script** | Write and run a AHK Script | Live |
+| **Window Spy** | AHK's built-in Window Spy | Live |
 More features coming soon.
 
 ## Supports AHK version 2!
