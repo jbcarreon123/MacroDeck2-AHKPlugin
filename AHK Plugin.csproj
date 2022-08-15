@@ -7,7 +7,7 @@
     <Platforms>AnyCPU;x64</Platforms>
     <AssemblyName>AutoHotkey Plugin</AssemblyName>
     <Authors>AutoHotkey Plugin</Authors>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
