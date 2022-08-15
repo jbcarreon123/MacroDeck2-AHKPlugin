@@ -1,0 +1,19 @@
+D:\Repos\AHKPlugin\bin\Debug\netcoreapp3.1\Macro Deck 2.dll
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AHK Plugin.csproj.AssemblyReference.cache
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\jbcarreon123.AHKPlugin.GUI.PluginConfig.resources
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\jbcarreon123.AHKPlugin.GUI.RunScript.resources
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\jbcarreon123.AHKPlugin.GUI.RunScriptv2.resources
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\jbcarreon123.AHKPlugin.GUI.WriteScript.resources
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\jbcarreon123.AHKPlugin.GUI.WriteScriptv2.resources
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\jbcarreon123.AHKPlugin.Properties.Resources.resources
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AHK Plugin.csproj.GenerateResource.cache
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AHK Plugin.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AHK Plugin.AssemblyInfoInputs.cache
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AHK Plugin.AssemblyInfo.cs
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AHK Plugin.csproj.CoreCompileInputs.cache
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AHK Plugin.csproj.CopyComplete
+D:\Repos\AHKPlugin\bin\Debug\netcoreapp3.1\AutoHotkey Plugin.deps.json
+D:\Repos\AHKPlugin\bin\Debug\netcoreapp3.1\AutoHotkey Plugin.dll
+D:\Repos\AHKPlugin\bin\Debug\netcoreapp3.1\AutoHotkey Plugin.pdb
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AutoHotkey Plugin.dll
+D:\Repos\AHKPlugin\obj\Debug\netcoreapp3.1\AutoHotkey Plugin.pdb

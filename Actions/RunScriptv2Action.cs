@@ -31,7 +31,7 @@ namespace jbcarreon123.AHKPlugin.Actions
             try
             {
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                proc.StartInfo.FileName = pth + "\\AutoHotkey.exe";
+                proc.StartInfo.FileName = pth + "\\AutoHotkeyU64.exe";
                 proc.StartInfo.Arguments = "\"" + script + "\"";
                 proc.Start();
             }

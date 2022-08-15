@@ -7,18 +7,19 @@
     <Platforms>AnyCPU;x64</Platforms>
     <AssemblyName>AutoHotkey Plugin</AssemblyName>
     <Authors>AutoHotkey Plugin</Authors>
+    <Version>1.1.0</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="Macro Deck 2">
-      <HintPath>C:\Program Files\Macro Deck\Macro Deck 2.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
 	<PackageReference Include="Config" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Macro Deck 2">
+      <HintPath>E:\Macro Deck\Macro Deck 2.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -37,7 +38,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /y &quot;D:\SH1\AHK Plugin\bin\x64\Debug\netcoreapp3.1\AutoHotkey Plugin.dll&quot; &quot;%25AppData%25\Macro Deck\Plugins\jbcarreon123.AHKPlugin\AutoHotkey Plugin.dll&quot;" />
+    <Exec Command="copy /y &quot;D:\Repos\AHKPlugin\bin\Debug\netcoreapp3.1\AutoHotkey Plugin.dll&quot; &quot;%25temp%25\.net\Macro Deck 2\SXBJAH20YW6MeYtPR3JnNFjfmGmxWL0=\Data\plugins\jbcarreon123.AHKPlugin\AutoHotkey Plugin.dll&quot;" />
   </Target>
 
 </Project>

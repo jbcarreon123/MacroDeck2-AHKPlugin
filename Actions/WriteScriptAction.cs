@@ -30,13 +30,13 @@ namespace jbcarreon123.AHKPlugin.Actions
             var script = configurationObject["script"].ToString();
             Random Rnd = new Random();
             int rnd = Rnd.Next(10000);
-            var pth = PluginConfigHelper.GetPath("v2");
+            var pth = PluginConfigHelper.GetPath("v1");
 
             try
             {
                 File.WriteAllText(MacroDeck.TempDirectoryPath + "\\" + rnd + ".ahk", script);
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                proc.StartInfo.FileName = pth + "\\AutoHotkey.exe";
+                proc.StartInfo.FileName = pth + "\\AutoHotkeyU64.exe";
                 proc.StartInfo.Arguments = "\"" + MacroDeck.TempDirectoryPath + "\\" + rnd + ".ahk" + "\"";
                 proc.EnableRaisingEvents = true;
 
