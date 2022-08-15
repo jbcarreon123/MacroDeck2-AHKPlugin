@@ -26,12 +26,12 @@ namespace jbcarreon123.AHKPlugin.Actions
         {
             JObject configurationObject = JObject.Parse(this.Configuration);
             var script = configurationObject["ahkScriptPath"].ToString();
-            var pth = PluginConfigHelper.GetPath("v2");
+            var pth = PluginConfigHelper.GetPath("v1");
 
             try
             {
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                proc.StartInfo.FileName = pth + "\\AutoHotkey.exe";
+                proc.StartInfo.FileName = pth + "\\AutoHotkeyU64.exe";
                 proc.StartInfo.Arguments = "\"" + script + "\"";
                 proc.Start();
             }

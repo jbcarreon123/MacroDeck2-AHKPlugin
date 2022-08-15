@@ -34,6 +34,7 @@ namespace jbcarreon123.AHKPlugin
                 new RunScriptv2Action(),
                 new WriteScriptAction(),
                 new WriteScriptv2Action(),
+                new WindowSpyAction(),
             };
         }
 

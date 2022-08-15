@@ -19,7 +19,7 @@ AHK Plugin has these actions:
 |------------------------------|----------------------------|--------------|
 | **Run AHK Script**           | Run a AutoHotkey script    | Live         |
 | **Write and Run AHK Script** | Write and run a AHK Script | Live         |
-| **Window Spy**               | AHK's built-in Window Spy  | Coming Soon! |
+| **Window Spy**               | AHK's built-in Window Spy  | Live         |
 More features coming soon.
 
 ## Supports AHK version 2!

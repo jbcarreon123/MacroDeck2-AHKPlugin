@@ -10,6 +10,7 @@ using System.Drawing;
 using jbcarreon123.AHKPlugin;
 using SuchByte.MacroDeck.GUI.CustomControls;
 using jbcarreon123.AHKPlugin.Languages;
+using Microsoft.VisualBasic;
 
 namespace jbcarreon123.AHKPlugin.GUI
 {
@@ -38,7 +39,7 @@ namespace jbcarreon123.AHKPlugin.GUI
             {
                 if (checkBox1.Checked == true)
                 {
-                    if (File.Exists(v2path + "\\AutoHotkey.exe"))
+                    if (File.Exists(v2path + "\\AutoHotkeyU64.exe"))
                     {
                         excp = false;
                         if (path.EndsWith("\\"))
@@ -62,7 +63,7 @@ namespace jbcarreon123.AHKPlugin.GUI
             }
             if (excp == false)
             {
-                if (File.Exists(path + "\\AutoHotkey.exe"))
+                if (File.Exists(path + "\\AutoHotkey.exe") || File.Exists(path + "\\AutoHotkeyU64.exe"))
                 {
                     using var messageBox = new SuchByte.MacroDeck.GUI.CustomControls.MessageBox();
                     var msgDiag = messageBox.ShowDialog(LanguageManager.Strings.MacroDeckNeedsARestart, LanguageManager.Strings.MacroDeckMustBeRestartedForTheChanges, MessageBoxButtons.YesNo);
@@ -113,7 +114,7 @@ namespace jbcarreon123.AHKPlugin.GUI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var path = textBox1.Text;
-            if (File.Exists(path + "\\AutoHotkey.exe")) {
+            if (File.Exists(path + "\\AutoHotkey.exe") || File.Exists(path + "\\AutoHotkeyU64.exe")) {
                 textBox1.BackColor = Color.FromArgb(65, 65, 65);
             } else {
                 textBox1.BackColor = Color.FromArgb(253, 26, 18);
@@ -178,7 +179,7 @@ namespace jbcarreon123.AHKPlugin.GUI
         private void roundedTextBox1_TextChanged(object sender, EventArgs e)
         {
             var path = roundedTextBox1.Text;
-            if (File.Exists(path + "\\AutoHotkey.exe"))
+            if (File.Exists(path + "\\AutoHotkeyU64.exe"))
             {
                 roundedTextBox1.BackColor = Color.FromArgb(65, 65, 65);
             }
