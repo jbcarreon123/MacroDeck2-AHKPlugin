@@ -23,7 +23,7 @@ AHK Plugin has these actions:
 More features coming soon.
 
 ## Supports AHK version 2!
-AHK Plugin supports AutoHotkey version 2 and you can interchange version 1 and 2!
+AHK Plugin supports AutoHotkey version 2 and you can interchange version 1 and 2 *[1.1.0]*.
 
 ## Notes
 This is a plugin for Macro Deck 2, it does NOT function as a standalone app  
