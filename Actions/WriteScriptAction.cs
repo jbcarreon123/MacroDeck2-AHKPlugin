@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Text.RegularExpressions;
 using jbcarreon123.AHKPlugin.Languages;
 using SuchByte.MacroDeck.Logging;
 using SuchByte.MacroDeck;
@@ -34,6 +35,21 @@ namespace jbcarreon123.AHKPlugin.Actions
 
             try
             {
+                string pattern = @"{{\s?\w+\s?}}";
+                foreach (Match match in Regex.Matches(script, pattern))
+                {
+                    string var_name = match.Value.Replace("{{", "").Replace("}}", "").Trim();
+                    try
+                    {
+                        string var_value = VariableManager.ListVariables.FirstOrDefault(v => v.Name.Equals(var_name)).Value;
+                        script = script.Replace(match.Value, var_value);
+                    }
+                    catch (Exception e)
+                    {
+                        MacroDeckLogger.Error(PluginInstance.Main, $"Could not load variable with name \"{var_name}\": {e}");
+                    }
+                }
+
                 File.WriteAllText(MacroDeck.TempDirectoryPath + "\\" + rnd + ".ahk", script);
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();
                 proc.StartInfo.FileName = pth + "\\AutoHotkeyU64.exe";
