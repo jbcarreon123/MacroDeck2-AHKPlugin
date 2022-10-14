@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using System.Text.RegularExpressions;
 using jbcarreon123.AHKPlugin.Languages;
 using SuchByte.MacroDeck.Logging;
 using SuchByte.MacroDeck;
