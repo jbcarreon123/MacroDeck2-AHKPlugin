@@ -35,20 +35,17 @@ namespace jbcarreon123.AHKPlugin.Actions
 
             try
             {
-                string pattern = @"{{\s?\w+\s?}}";
-                foreach (Match match in Regex.Matches(script, pattern))
-                {
-                    string var_name = match.Value.Replace("{{", "").Replace("}}", "").Trim();
-                    try
-                    {
-                        string var_value = VariableManager.ListVariables.FirstOrDefault(v => v.Name.Equals(var_name)).Value;
-                        script = script.Replace(match.Value, var_value);
-                    }
-                    catch (Exception e)
-                    {
-                        MacroDeckLogger.Error(PluginInstance.Main, $"Could not load variable with name \"{var_name}\": {e}");
-                    }
-                }
+                // Render script with variables
+                // Ensure we keep AHK '{' and '}' alive
+                script = script.Replace("{{", "_COTTLE_PLACEHOLDER_OPEN_");
+                script = script.Replace("}}", "_COTTLE_PLACEHOLDER_CLOSE_");
+                script = script.Replace("{", "_AHK_PLACEHOLDER_OPEN_");
+                script = script.Replace("}", "_AHK_PLACEHOLDER_CLOSE_");
+                script = script.Replace("_COTTLE_PLACEHOLDER_OPEN_", "{");
+                script = script.Replace("_COTTLE_PLACEHOLDER_CLOSE_", "}");
+                script = VariableManager.RenderTemplate(script);
+                script = script.Replace("_AHK_PLACEHOLDER_OPEN_", "{");
+                script = script.Replace("_AHK_PLACEHOLDER_CLOSE_", "}");
 
                 File.WriteAllText(MacroDeck.TempDirectoryPath + "\\" + rnd + ".ahk", script);
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();

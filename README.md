@@ -11,7 +11,7 @@ Choose your existing AHK script file and leave it! It will now work!
 or, Write a new AHK script and leave it! AHK Plugin will run it if you pressed the action button!
 
 ### Variables
-Writing scripts within Macro-Deck allows using Variables. Variable names have to be enclosed in `{{` and `}}` (example `{{ my_variable }}`). 
+Writing scripts within Macro-Deck allows using Variables. Since AHK makes use of `{` and `}` we use double `{{` and `}}` to indicate a Variable in AWH WriteScripts (example `{{my_variable}}`).
 Example:
 ```
 MsgBox, It is now {{time}} and the date is {{date}}.
