@@ -10,12 +10,13 @@ Choose your existing AHK script file and leave it! It will now work!
 ## Write and Run AutoHotkey scripts
 or, Write a new AHK script and leave it! AHK Plugin will run it if you pressed the action button!
 
-### Variables
+### Variables [2.0.0+]
 Writing scripts within Macro-Deck allows using Variables. Since AHK makes use of `{` and `}` we use double `{{` and `}}` to indicate a Variable in AWH WriteScripts (example `{{my_variable}}`).
 Example:
 ```
 MsgBox, It is now {{time}} and the date is {{date}}.
 ```
+Thanks [@Timoses](https://github.com/Timoses) for coding this feature!
 
 ## Automation
 Use AHK Plugin with other plugins for automated tasks in Macro Deck!
