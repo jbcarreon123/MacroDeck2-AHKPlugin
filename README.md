@@ -19,6 +19,7 @@ MsgBox, It is now {{time}} and the date is {{date}}.
 Thanks [@Timoses](https://github.com/Timoses) for coding this feature!
 
 ## Automation
+From pushing a key combination to automating PowerPoint, AHK Plugin can do that.
 Use AHK Plugin with other plugins for automated tasks in Macro Deck!
 
 ## Features
