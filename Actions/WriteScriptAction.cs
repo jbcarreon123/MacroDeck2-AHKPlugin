@@ -34,6 +34,18 @@ namespace jbcarreon123.AHKPlugin.Actions
 
             try
             {
+                // Render script with variables
+                // Ensure we keep AHK '{' and '}' alive
+                script = script.Replace("{{", "_COTTLE_PLACEHOLDER_OPEN_");
+                script = script.Replace("}}", "_COTTLE_PLACEHOLDER_CLOSE_");
+                script = script.Replace("{", "_AHK_PLACEHOLDER_OPEN_");
+                script = script.Replace("}", "_AHK_PLACEHOLDER_CLOSE_");
+                script = script.Replace("_COTTLE_PLACEHOLDER_OPEN_", "{");
+                script = script.Replace("_COTTLE_PLACEHOLDER_CLOSE_", "}");
+                script = VariableManager.RenderTemplate(script);
+                script = script.Replace("_AHK_PLACEHOLDER_OPEN_", "{");
+                script = script.Replace("_AHK_PLACEHOLDER_CLOSE_", "}");
+
                 File.WriteAllText(MacroDeck.TempDirectoryPath + "\\" + rnd + ".ahk", script);
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();
                 proc.StartInfo.FileName = pth + "\\AutoHotkeyU64.exe";
