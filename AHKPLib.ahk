@@ -1,4 +1,4 @@
-#Include WebSocket.ahk
+#Include C:\\Users\\jbcarreon123\\AppData\\Roaming\\Macro Deck\\plugins\\jbcarreon123.AHKPlugin\\AHKPLib\\WebSocket.ahk
 val := ""
 global ws
 
