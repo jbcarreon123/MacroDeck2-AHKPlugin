@@ -1,6 +1,5 @@
 # AutoHotkey Plugin for Macro Deck 2
-<img alt="Macro Deck 2 Community Plugin" height="64px" align="center" href="https://macrodeck.org" src="https://macrodeck.org/images/macro_deck_2_community_plugin.png"/>
-Macro Deck 2 Community Plugin: does NOT work in Macro Deck Server or a standalone program
+<img alt="Macro Deck 2 Community Plugin" height="64px" align="center" href="https://macrodeck.org" src="https://macrodeck.org/images/macro_deck_2_community_plugin.png"/> Macro Deck 2 Community Plugin: does NOT work in Macro Deck Server or a standalone program
 
 ***
 
@@ -13,10 +12,20 @@ or, Write a new AHK script and leave it! AHK Plugin will run it if you pressed t
 ### Variables [2.0.0+]
 Writing scripts within Macro-Deck allows using Variables. Since AHK makes use of `{` and `}` we use double `{{` and `}}` to indicate a Variable in AWH WriteScripts (example `{{my_variable}}`).
 Example:
-```
+```ahk
 MsgBox, It is now {{time}} and the date is {{date}}.
 ```
 Thanks [@Timoses](https://github.com/Timoses) for coding this feature!
+
+### [AutoHotkey Plugin Library for AutoHotkey 1.1](https://github.com/jbcarreon123/MacroDeck2-AHKPlugin/tree/AHKPLib) [3.0.0+]
+Using the WriteScript v1.1 action now allows you to make communication to AHK Plugin to create a variable, get variables, update variables, create a notification and more.
+Example:
+```ahk
+#Include AHKPLib.ahk
+ExampleApp := new AHKPLib()
+MsgBox % ExampleApp.GetVar("date")
+```
+Documentation is available on the link above.
 
 ## Automation
 From pushing a key combination to automating PowerPoint *[RIP Office (the name)]*, AHK Plugin can do that.

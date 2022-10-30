@@ -1,24 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>jbcarreon123.AHKPlugin</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
-    <Platforms>AnyCPU;x64</Platforms>
+    <Platforms>x64</Platforms>
     <AssemblyName>AutoHotkey Plugin</AssemblyName>
     <Authors>AutoHotkey Plugin</Authors>
-    <Version>2.0.0</Version>
+    <Version>3.0.0</Version>
+    <TargetFramework>net6.0-windows</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Fleck" Version="1.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.3" />
 	<PackageReference Include="Config" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Macro Deck 2">
-      <HintPath>E:\Macro Deck\Macro Deck 2.dll</HintPath>
+      <HintPath>D:/git/macro-deck/bin/Debug/net6.0-windows10.0.22000.0/win-x64/Macro Deck 2.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -38,7 +39,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /y &quot;D:\Repos\AHKPlugin\bin\Debug\netcoreapp3.1\AutoHotkey Plugin.dll&quot; &quot;%25temp%25\.net\Macro Deck 2\SXBJAH20YW6MeYtPR3JnNFjfmGmxWL0=\Data\plugins\jbcarreon123.AHKPlugin\AutoHotkey Plugin.dll&quot;" />
+    <Exec Command="copy /y &quot;D:\git\MacroDeck2-AHKPlugin\bin\Debug\net6.0-windows\AutoHotkey Plugin.dll&quot; &quot;%25appdata%25\Macro Deck\plugins\jbcarreon123.AHKPlugin\AutoHotkey Plugin.dll&quot;" />
   </Target>
 
 </Project>
