@@ -19,7 +19,11 @@ Parameters:
 value - the variable name   
 vartype - the variable type. Possible values are ```String (str)```, ```Boolean (bool)```, ```Float (fl)```, and ```Integer (int)```. Case-insensitive.
 
-### DelVar coming soon.
+### ```AHKPLib.DelVar(string value)```
+Parameters:   
+value - the variable name   
+Notes:   
+This can delete all variables. Please use with caution.
 
 ## Other stuff
 ### ```AHKPLib.Notify(string title, string value, string showballoontip)```
