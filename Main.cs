@@ -65,10 +65,10 @@ namespace jbcarreon123.AHKPlugin
             // checks if AHK_L field is actually AHK_L, not AHKv2
             var pth = PluginConfigHelper.GetPath("v2");
             if (File.Exists(pth + "\\AutoHotkeyU64.exe")) 
-                NotificationManager.Notify(PluginInstance.Main, "Not recommended", "Putting AHKv1 in AHKv2's field is not recommended.");
+                NotificationManager.Notify(PluginInstance.Main, "Not recommended", "Putting AHKv1 in AHKv2\"s field is not recommended.");
             pth = PluginConfigHelper.GetPath("v1");
             if (File.Exists(pth + "\\AutoHotkey64.exe")) 
-                NotificationManager.Notify(PluginInstance.Main, "Not recommended", "Putting AHKv2 in AHKv1's field is not recommended.");
+                NotificationManager.Notify(PluginInstance.Main, "Not recommended", "Putting AHKv2 in AHKv1\"s field is not recommended.");
         }
 
         public void LoadWSServer() {
@@ -111,7 +111,7 @@ namespace jbcarreon123.AHKPlugin
                                 variableType = VariableType.Bool;
                             }
                             else {
-                                socket.Send($"ERROR: No such thing as {obj.vartype}");
+                                socket.Send($"ERROR: No such thing as '{obj.vartype}'");
                                 return;
                             }
                             VariableManager.SetValue(obj.value, obj.varvalue, variableType, this);
@@ -133,17 +133,33 @@ namespace jbcarreon123.AHKPlugin
                                 MacroDeckLogger.Error(this, obj.value);
                             }
                             else {
-                                socket.Send($"ERROR: No such thing as {obj.vartype}");
+                                socket.Send($"ERROR: No such thing as '{obj.vartype}'");
                             }
+                        }
+                        else if (obj.command == "listallvars") {
+                            string json = "[";
+                            foreach (var variable in VariableManager.Variables) {
+                                json += $"{{\"name\": \"{variable.Name}\", \"type\": \"{variable.VariableType}\", \"creator\": \"{variable.Creator}\", \"value\": \"{variable.Value}\"}}, ";
+                            }                        
+                            json = json.Remove(json.Length - 2);
+                            json += "]";
+                            socket.Send(json);
+                        }
+                        else if (obj.command == "delvar") {
+                            VariableManager.DeleteVariable(obj.value);
+                        }
+                        else if (obj.command == "showmdwindow") {
+                            MacroDeck.ShowMainWindow();
                         }
                         else if (obj.command == "mdver") {
                             socket.Send($"{MacroDeck.Version.VersionString}");
                         }
                         else {
-                            socket.Send($"ERROR: Command {obj.command} does not exist.");
+                            socket.Send($"ERROR: Command '{obj.command}' does not exist.");
                         }
                     };
                     socket.OnOpen = () => MacroDeckLogger.Info(this, "WebSocket Connected.");
+                    socket.OnClose = () => MacroDeckLogger.Info(this, "WebSocket Disconnected.");
                 });
         }
     }
