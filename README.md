@@ -37,7 +37,7 @@ vartype - the type of the log. Possible values are ```Info```, ```Trace```, ```W
 Notes:
 Like Notifications, Logs always says ```AutoHotkey Plugin```. You can't change it.
 
-### ```AHKPLib.MDVer()```
+### ```AHKPLib.MacroDeckVersion()```
 Outputs the version of Macro Deck. Useful if you need to know the version of Macro Deck.
 
 ## Third-party Libraries
