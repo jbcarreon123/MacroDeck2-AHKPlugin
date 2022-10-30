@@ -1,5 +1,5 @@
 # AutoHotkey Plugin for Macro Deck 2
-<img alt="Macro Deck 2 Community Plugin" height="64px" align="center" href="https://macrodeck.org" src="https://macrodeck.org/images/macro_deck_2_community_plugin.png"/> Macro Deck 2 Community Plugin: does NOT work in Macro Deck Server or a standalone program
+<img alt="Macro Deck 2 Community Plugin" height="64px" position="center" href="https://macrodeck.org" src="https://macrodeck.org/images/macro_deck_2_community_plugin.png"/> Macro Deck 2 Community Plugin: does NOT work in Macro Deck Server or a standalone program
 
 ***
 
