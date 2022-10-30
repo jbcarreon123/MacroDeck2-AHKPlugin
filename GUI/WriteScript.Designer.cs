@@ -1,4 +1,5 @@
 ﻿using SuchByte.MacroDeck.GUI.CustomControls;
+using SuchByte.MacroDeck;
 
 namespace jbcarreon123.AHKPlugin.GUI
 {
@@ -71,7 +72,7 @@ namespace jbcarreon123.AHKPlugin.GUI
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(857, 358);
             this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = $"#Include {MacroDeck.ApplicationPaths.PluginsDirectoryPath}\\jbcarreon123.AHKPlugin\\AHKPLib\\AHKPLib.ahk\r\n; Remove the above when you don't want to use it. Documentation is on https://github.com/jbcarreon123/MacroDeck2-AHKPlugin/tree/AHKPLib";
             this.richTextBox1.WordWrap = false;
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox1_SelectionChanged);
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
