@@ -1,4 +1,5 @@
 ﻿using SuchByte.MacroDeck.Plugins;
+using System.Net;
 using SuchByte.MacroDeck.Variables;
 using jbcarreon123.AHKPlugin.GUI;
 using jbcarreon123.AHKPlugin.Actions;
@@ -71,6 +72,16 @@ namespace jbcarreon123.AHKPlugin
         }
 
         public void LoadWSServer() {
+            if (!Directory.Exists(MacroDeck.ApplicationPaths.PluginsDirectoryPath + @"\jbcarreon123.AHKPlugin\AHKPLib\")) {
+                MacroDeckLogger.Info(this, "AHKPLib does not exist. Downloading it...");
+                using (var client = new WebClient())
+                {
+                    client.DownloadFile("https://github.com/jbcarreon123/MacroDeck2-AHKPlugin/archive/refs/heads/AHKPLib.zip", MacroDeck.ApplicationPaths.TempDirectoryPath + "\\AHKPLib.zip");
+                }
+                System.IO.Compression.ZipFile.ExtractToDirectory(MacroDeck.ApplicationPaths.TempDirectoryPath + "\\AHKPLib.zip", MacroDeck.ApplicationPaths.PluginsDirectoryPath + @"\jbcarreon123.AHKPlugin\");
+                Directory.Move(MacroDeck.ApplicationPaths.PluginsDirectoryPath + @"\jbcarreon123.AHKPlugin\MacroDeck2-AHKPlugin-AHKPLib\", MacroDeck.ApplicationPaths.PluginsDirectoryPath + @"\jbcarreon123.AHKPlugin\AHKPLib\");
+            }
+
             MacroDeckLogger.Info(this, "Starting a WebSocket Server for AHKPLib on 0.0.0.0:8192....");
             var server = new WebSocketServer($"ws://0.0.0.0:8192");
             server.Start(socket =>
