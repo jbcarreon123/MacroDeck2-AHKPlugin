@@ -5,5 +5,7 @@
   "packageId": "jbcarreon123.AHKPlugin",
   "version": "2.0.0",
   "target-plugin-api-version": 32,
-  "dll": "AutoHotkey Plugin.dll"
+  "dll": "AutoHotkey Plugin.dll",
+  "repository": "https://github.com/jbcarreon123/MacroDeck2-AHKPlugin/",
+  "author-discord": 908002848967626842
   }
