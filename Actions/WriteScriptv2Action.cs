@@ -46,14 +46,26 @@ namespace jbcarreon123.AHKPlugin.Actions
                 script = script.Replace("_AHK_PLACEHOLDER_OPEN_", "{");
                 script = script.Replace("_AHK_PLACEHOLDER_CLOSE_", "}");
 
-                File.WriteAllText(MacroDeck.ApplicationPaths.TempDirectoryPath + "\\" + rnd + ".ahk", script);
+                File.WriteAllText(SuchByte.MacroDeck.Startup.ApplicationPaths.TempDirectoryPath + "\\" + rnd + ".ahk", script);
                 System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                proc.StartInfo.FileName = pth + "\\AutoHotkey.exe";
-                proc.StartInfo.Arguments = "\"" + MacroDeck.ApplicationPaths.TempDirectoryPath + "\\" + rnd + ".ahk" + "\"";
+                proc.StartInfo.FileName = pth + "\\AutoHotkey64.exe";
+                proc.StartInfo.Arguments = "\"" + SuchByte.MacroDeck.Startup.ApplicationPaths.TempDirectoryPath + "\\" + rnd + ".ahk" + "\"";
                 proc.EnableRaisingEvents = true;
+                proc.StartInfo.RedirectStandardOutput = true;
+                proc.StartInfo.RedirectStandardError = true;
+
+                proc.ErrorDataReceived += (sender, e) =>
+                {
+
+                };
+
+                proc.OutputDataReceived += (sender, e) =>
+                {
+
+                };
 
                 proc.Exited += (sender, e) => {
-                    var dpth = MacroDeck.ApplicationPaths.TempDirectoryPath + "\\" + rnd + ".ahk";
+                    var dpth = SuchByte.MacroDeck.Startup.ApplicationPaths.TempDirectoryPath + "\\" + rnd + ".ahk";
                     File.Delete(dpth);
                 };
                 proc.Start();

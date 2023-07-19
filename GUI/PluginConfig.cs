@@ -19,77 +19,72 @@ namespace jbcarreon123.AHKPlugin.GUI
         public PluginConfig()
         {
             InitializeComponent();
-            checkBox1.Checked = bool.Parse(PluginConfigHelper.GetPath("v2ch"));
+            checkBox1.Checked = bool.Parse(PluginConfigHelper.GetPath("v1ch"));
             label1.Text = PluginLanguageManager.PluginStrings.AHKScriptPathExpl;
             label2.Text = PluginLanguageManager.PluginStrings.AHKScriptPath;
-            label3.Text = PluginLanguageManager.PluginStrings.Addv2;
-            label4.Text = PluginLanguageManager.PluginStrings.Remv2;
-            label5.Text = PluginLanguageManager.PluginStrings.AHKScriptPathv2;
-            label6.Text = PluginLanguageManager.PluginStrings.AHKScriptPathv2Note;
+            label3.Text = PluginLanguageManager.PluginStrings.Addv1;
+            label4.Text = PluginLanguageManager.PluginStrings.Remv1;
+            label5.Text = PluginLanguageManager.PluginStrings.AHKScriptPathv1;
+            label6.Text = PluginLanguageManager.PluginStrings.AHKScriptPathv1Note;
             linkLabel1.Text = PluginLanguageManager.PluginStrings.DefaultAHKPath;
 
         }
 
         private void buttonPrimary1_Click(object sender, EventArgs e)
         {
-            bool excp = false ;
+            bool excp = false;
             string path = textBox1.Text;
             string v2path = roundedTextBox1.Text;
             if (excp == false)
             {
-                if (checkBox1.Checked == true)
+                if (File.Exists(v2path + "\\AutoHotkey64.exe"))
                 {
-                    if (File.Exists(v2path + "\\AutoHotkeyU64.exe"))
+                    excp = false;
+                    if (v2path.EndsWith("\\"))
                     {
-                        excp = false;
-                        if (path.EndsWith("\\"))
-                        {
-                            PluginConfigHelper.UpdatePath("v2", v2path);
-                        }
-                        else
-                        {
-                            v2path += "\\";
-                            PluginConfigHelper.UpdatePath("v2", v2path);
-                        }
+                        PluginConfigHelper.UpdatePath("v2", v2path);
                     }
                     else
                     {
-                        using var messageBox = new SuchByte.MacroDeck.GUI.CustomControls.MessageBox();
-                        messageBox.ShowDialog("Can't find AutoHotkey.exe", "It seems like AutoHotkey.exe is not on the folder. Please make sure that you use the correct path and try again.", MessageBoxButtons.OK);
-                        roundedTextBox1.BackColor = Color.FromArgb(253, 26, 18);
-                        excp = true;
-                    }
-                }
-            }
-            if (excp == false)
-            {
-                if (File.Exists(path + "\\AutoHotkey.exe") || File.Exists(path + "\\AutoHotkeyU64.exe"))
-                {
-                    using var messageBox = new SuchByte.MacroDeck.GUI.CustomControls.MessageBox();
-                    var msgDiag = messageBox.ShowDialog(LanguageManager.Strings.MacroDeckNeedsARestart, LanguageManager.Strings.MacroDeckMustBeRestartedForTheChanges, MessageBoxButtons.YesNo);
-                    if (msgDiag == DialogResult.Yes)
-                    {
-                        excp = false;
-                        if (path.EndsWith("\\"))
-                        {
-                            PluginConfigHelper.UpdatePath("v1", path);
-                            MacroDeck.RestartMacroDeck();
-                        }
-                        else
-                        {
-                            path += "\\";
-                            PluginConfigHelper.UpdatePath("v1", path);
-                            MacroDeck.RestartMacroDeck();
-                        }
+                        v2path += "\\";
+                        PluginConfigHelper.UpdatePath("v2", v2path);
                     }
                 }
                 else
                 {
                     using var messageBox = new SuchByte.MacroDeck.GUI.CustomControls.MessageBox();
                     messageBox.ShowDialog("Can't find AutoHotkey.exe", "It seems like AutoHotkey.exe is not on the folder. Please make sure that you use the correct path and try again.", MessageBoxButtons.OK);
-                    textBox1.BackColor = Color.FromArgb(253, 26, 18);
+                    roundedTextBox1.BackColor = Color.FromArgb(253, 26, 18);
                     excp = true;
+                    return;
                 }
+
+                if (checkBox1.Checked == true)
+                {
+                    if (File.Exists(path + "\\AutoHotkey.exe") || File.Exists(path + "\\AutoHotkeyU64.exe"))
+                    {
+                        using var messageBox = new SuchByte.MacroDeck.GUI.CustomControls.MessageBox();
+                        if (path.EndsWith("\\"))
+                        {
+                            PluginConfigHelper.UpdatePath("v1", path);
+                        }
+                        else
+                        {
+                            path += "\\";
+                            PluginConfigHelper.UpdatePath("v1", path);
+                        }
+                    }
+                    else
+                    {
+                        using var messageBox = new SuchByte.MacroDeck.GUI.CustomControls.MessageBox();
+                        messageBox.ShowDialog("Can't find AutoHotkey.exe", "It seems like AutoHotkey.exe is not on the folder. Please make sure that you use the correct path and try again.", MessageBoxButtons.OK);
+                        textBox1.BackColor = Color.FromArgb(253, 26, 18);
+                        excp = true;
+                        return;
+                    }
+                }
+
+                this.Close();
             }
         }
 
@@ -100,9 +95,9 @@ namespace jbcarreon123.AHKPlugin.GUI
 
         private void SetDefault()
         {
-            string defpath = "C:\\Program Files\\AutoHotkey\\";
-            PluginConfigHelper.UpdatePath("v1", defpath);
-            textBox1.Text = defpath;
+            string defpath = "C:\\Program Files\\AutoHotkey\\v2\\";
+            PluginConfigHelper.UpdatePath("v2", defpath);
+            roundedTextBox1.Text = defpath;
         }
 
         private void textBox1_Load(object sender, EventArgs e)
@@ -114,16 +109,19 @@ namespace jbcarreon123.AHKPlugin.GUI
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var path = textBox1.Text;
-            if (File.Exists(path + "\\AutoHotkey.exe") || File.Exists(path + "\\AutoHotkeyU64.exe")) {
+            if (File.Exists(path + "\\AutoHotkey.exe") || File.Exists(path + "\\AutoHotkeyU64.exe"))
+            {
                 textBox1.BackColor = Color.FromArgb(65, 65, 65);
-            } else {
+            }
+            else
+            {
                 textBox1.BackColor = Color.FromArgb(253, 26, 18);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 textBox1.Text = folderBrowserDialog1.SelectedPath;
             }
@@ -144,20 +142,20 @@ namespace jbcarreon123.AHKPlugin.GUI
         {
             if (checkBox1.Checked == true)
             {
-                PluginConfigHelper.UpdatePath("v2ch", Convert.ToString(checkBox1.Checked));
+                PluginConfigHelper.UpdatePath("v1ch", Convert.ToString(checkBox1.Checked));
                 label4.Visible = true;
                 label3.Visible = false;
-                roundedTextBox1.Enabled = true;
-                buttonPrimary2.Enabled = true;
+                textBox1.Enabled = true;
+                button2.Enabled = true;
                 label5.ForeColor = Color.FromKnownColor(KnownColor.ControlLightLight);
             }
             else
             {
-                PluginConfigHelper.UpdatePath("v2ch", Convert.ToString(checkBox1.Checked));
+                PluginConfigHelper.UpdatePath("v1ch", Convert.ToString(checkBox1.Checked));
                 label3.Visible = true;
                 label4.Visible = false;
-                roundedTextBox1.Enabled = false;
-                buttonPrimary2.Enabled = false;
+                textBox1.Enabled = false;
+                button2.Enabled = false;
                 label5.ForeColor = Color.FromKnownColor(KnownColor.ControlDarkDark);
             }
         }
@@ -179,7 +177,7 @@ namespace jbcarreon123.AHKPlugin.GUI
         private void roundedTextBox1_TextChanged(object sender, EventArgs e)
         {
             var path = roundedTextBox1.Text;
-            if (File.Exists(path + "\\AutoHotkeyU64.exe"))
+            if (File.Exists(path + "\\AutoHotkey64.exe"))
             {
                 roundedTextBox1.BackColor = Color.FromArgb(65, 65, 65);
             }

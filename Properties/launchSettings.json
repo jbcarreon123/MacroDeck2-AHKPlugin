@@ -5,8 +5,8 @@
     },
     "Macro Deck": {
       "commandName": "Executable",
-      "executablePath": "E:\\Macro Deck\\Macro Deck 2.exe",
-      "commandLineArgs": "--portable --show --log-level 0 --debug-console"
+      "executablePath": "C:\\Program Files\\Macro Deck\\Macro Deck 2.exe",
+      "commandLineArgs": "--show --log-level 0 --debug-console"
     }
   }
 }

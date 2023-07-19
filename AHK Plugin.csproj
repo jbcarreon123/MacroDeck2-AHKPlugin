@@ -7,7 +7,7 @@
     <AssemblyName>AutoHotkey Plugin</AssemblyName>
     <Authors>AutoHotkey Plugin</Authors>
     <Version>3.0.0</Version>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <Reference Include="Macro Deck 2">
-      <HintPath>D:/git/macro-deck/bin/Debug/net6.0-windows10.0.22000.0/win-x64/Macro Deck 2.dll</HintPath>
+      <HintPath>C:\Program Files\Macro Deck\Macro Deck 2.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /y &quot;D:\git\MacroDeck2-AHKPlugin\bin\Debug\net6.0-windows\AutoHotkey Plugin.dll&quot; &quot;%25appdata%25\Macro Deck\plugins\jbcarreon123.AHKPlugin\AutoHotkey Plugin.dll&quot;" />
+    <Exec Command="copy /y &quot;D:\RiderProjects\MacroDeck2-AHKPlugin\bin\x64\Debug\net7.0-windows\AutoHotkey Plugin.dll&quot; &quot;%25appdata%25\Macro Deck\plugins\jbcarreon123.AHKPlugin\AutoHotkey Plugin.dll&quot;" />
   </Target>
 
 </Project>

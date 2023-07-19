@@ -14,16 +14,16 @@ namespace jbcarreon123.AHKPlugin.Languages
 
         // Plugin Config
         public string AHKScriptPath = "AutoHotkey Script Path";
-        public string AHKScriptPathv2 = "AutoHotkey v2 Script Path";
-        public string AHKScriptPathv2Note = "Note: AHKv2 is in Alpha!";
+        public string AHKScriptPathv1 = "AutoHotkey v1 Script Path";
+        public string AHKScriptPathv1Note = "Note: AHKv1 is depectated!";
         public string AHKScriptPathExpl = "Why this requires the AutoHotkey installation path?\r\n\r\nBecause, fortunately, I found a AHK dll.But, 1. it's only\r\nv2(on alpha) compatible and 2. it's only partial. So I\r\ndidn't use that AutoHotkey DLL.";
         public string DefaultAHKPath = "Default AHK Install path";
-        public string Addv2 = "Add AutoHotkey version 2 in Actions";
-        public string Remv2 = "Remove AutoHotkey version 2 in Actions";
+        public string Addv1 = "Add AutoHotkey version 1.1 in Actions";
+        public string Remv1 = "Remove AutoHotkey version 1.1 in Actions";
 
         // Run Script
-        public string RunScriptAction = "Run AHK Script";
-        public string RunScriptActionDesc = "Run a AutoHotkey script";
+        public string RunScriptAction = "Run AHKv1 Script";
+        public string RunScriptActionDesc = "Run a AutoHotkey version 1 script";
         public string RunScriptPath = "AutoHotkey Script Path";
         public string RunScriptNote = "Don't add AHKv2 Scripts here! Go to Run AHK Script [v2].";
 
@@ -34,8 +34,8 @@ namespace jbcarreon123.AHKPlugin.Languages
         public string RunScriptv2Note = "Don't add AHKv1 Scripts here! Go to Run AHK Script.";
 
         // Write Script
-        public string WriteScriptAction = "Write and Run AHK Script";
-        public string WriteScriptActionDesc = "Write and Run a AHK Script";
+        public string WriteScriptAction = "Write and Run AHKv1 Script";
+        public string WriteScriptActionDesc = "Write and Run a AHKv1 Script";
         public string WriteScriptNote = "Don't write AHKv2 Scripts here! Go to Write and Run AHKv2 Script.";
 
         // Write Script v2

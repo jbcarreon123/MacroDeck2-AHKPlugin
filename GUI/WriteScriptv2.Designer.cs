@@ -5,6 +5,8 @@ namespace jbcarreon123.AHKPlugin.GUI
 {
     partial class WriteScriptv2
     {
+        private const string V = $"";
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -72,7 +74,7 @@ namespace jbcarreon123.AHKPlugin.GUI
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(857, 358);
             this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = $"";
+            this.richTextBox1.Text = V;
             this.richTextBox1.WordWrap = false;
             this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox1_SelectionChanged);
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);

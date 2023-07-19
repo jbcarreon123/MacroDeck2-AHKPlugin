@@ -16,7 +16,7 @@ namespace jbcarreon123.AHKPlugin
             }
             else if (ver == "v2ch")
             {
-                PluginConfiguration.SetValue(Main.Instance, "v2ch", path);
+                PluginConfiguration.SetValue(Main.Instance, "v1ch", path);
             }
             else if (ver == "temp")
             {
@@ -39,9 +39,9 @@ namespace jbcarreon123.AHKPlugin
                 }
                 return path;
             }
-            else if (ver == "v2ch")
+            else if (ver == "v1ch")
             {
-                var path = PluginConfiguration.GetValue(Main.Instance, "v2ch");
+                var path = PluginConfiguration.GetValue(Main.Instance, "v1ch");
                 if (string.IsNullOrWhiteSpace(path))
                 {
                     path = "false";
@@ -53,7 +53,7 @@ namespace jbcarreon123.AHKPlugin
                 var path = PluginConfiguration.GetValue(Main.Instance, "v2path");
                 if (string.IsNullOrWhiteSpace(path))
                 {
-                    path = "C:\\Program Files\\AutoHotkey\\";
+                    path = "C:\\Program Files\\AutoHotkey\\v2\\";
                 }
                 return path;
             }
