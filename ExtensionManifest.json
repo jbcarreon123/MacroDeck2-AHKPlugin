@@ -3,7 +3,7 @@
   "name": "AutoHotkey Plugin",
   "author": "jbcarreon123",
   "packageId": "jbcarreon123.AHKPlugin",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "target-plugin-api-version": 40,
   "dll": "AutoHotkey Plugin.dll",
   "target-macro-deck-version" : "2.13.0-b9",
