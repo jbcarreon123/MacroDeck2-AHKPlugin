@@ -6,6 +6,7 @@
   "version": "2.0.0",
   "target-plugin-api-version": 32,
   "dll": "AutoHotkey Plugin.dll",
+  "target-macro-deck-version" : "2.13.0-b9",
   "repository": "https://github.com/jbcarreon123/MacroDeck2-AHKPlugin/",
-  "author-discord": 908002848967626842
-  }
+  "author-discord-userid": 908002848967626842
+}
